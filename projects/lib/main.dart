@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projects/constants/global_variables.dart';
-
+import 'package:projects/features/authentication/screens/authenti_screens.dart';
+import 'package:projects/router/router.dart';
 void main() {
   runApp(const Main());
 }
@@ -13,21 +14,18 @@ class Main extends StatelessWidget {
       title: 'Amazon',
       theme: ThemeData(
         scaffoldBackgroundColor: GlobalVariables.backgroundColor, // will decorate the body without the app bar
+        colorScheme: const ColorScheme.light(
+          primary: GlobalVariables.secondaryColor
+        ),
         appBarTheme: const AppBarTheme(                             // decorating the app bar with theme
-           elevation: 0,                                            
+          elevation: 0,                                            
           iconTheme: IconThemeData(
             color: Colors.black,
           ),
         )
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Hello'),
-        ),
-        body: const Center(
-          child: Text("hi hello") ,
-        )
-        )
+      onGenerateRoute: (settings)=>generateRoute(settings),
+      home: const AuthScreen(),
 
     );
   }
