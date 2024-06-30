@@ -5,6 +5,7 @@ const password = encodeURIComponent("");
 const app = express();
 
 const mongo_db_url = `mongodb+srv://ezhil6999:${password}@clusterfree.mcymyme.mongodb.net/?retryWrites=true&w=majority&appName=ClusterFree`;
+
 app.use(express.json())
 
 mangoose
